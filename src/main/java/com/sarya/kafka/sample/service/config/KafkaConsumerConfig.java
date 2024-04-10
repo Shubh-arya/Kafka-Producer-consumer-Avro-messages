@@ -5,6 +5,8 @@ import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.boot.autoconfigure.kafka.KafkaProperties;
+import org.springframework.boot.ssl.DefaultSslBundleRegistry;
+import org.springframework.boot.ssl.SslBundles;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.kafka.annotation.EnableKafka;
@@ -23,7 +25,7 @@ public class KafkaConsumerConfig {
       KafkaProperties kafkaProperties
   ) {
     var consumerFactory = new DefaultKafkaConsumerFactory<String, ProductCreatedEvent>(
-        kafkaProperties.buildConsumerProperties()
+        kafkaProperties.buildConsumerProperties(new DefaultSslBundleRegistry())
     );
     ConcurrentKafkaListenerContainerFactory<String, ProductCreatedEvent> factory =
         new ConcurrentKafkaListenerContainerFactory<>();
