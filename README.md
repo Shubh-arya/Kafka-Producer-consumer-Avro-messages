@@ -1,0 +1,1 @@
+[![Java CI with Maven](https://github.com/Shubh-arya/Kafka-Producer-consumer-Avro-messages/actions/workflows/maven.yml/badge.svg)](https://github.com/Shubh-arya/Kafka-Producer-consumer-Avro-messages/actions/workflows/maven.yml)
