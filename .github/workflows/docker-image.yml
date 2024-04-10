@@ -13,4 +13,4 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Build the Docker image
-        run: docker build . --file ./docker/service.dockerfile --tag dgs-graphql-sample:$(date +%s)
+        run: docker build . --file ./docker/service.dockerfile --tag kafka-sample-service:$(date +%s)
